@@ -1,0 +1,41 @@
+{% extends 'Layaouts/../Layaouts/Base.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<h1>Lista de tareas</h1>
+
+{% for task in tasks %}
+
+
+
+    <article>
+
+
+    <h1>
+        {% if task.Done == False %} &#9201;
+        {% else %}  &#9989;
+        {% endif %}
+        Tarea ID:{{task.id}} {{task.Tittle_task}}
+    </h1>
+
+    <p> {{task.Description_task}}</p>
+    <p>Nombre de proyecto asociado: {{task.Project_Task.name}}</p>
+
+    <button>
+        Delete
+    </button>
+    <button>
+        &#9989; Done
+    </button>
+    </article>
+{% endfor %}
+
+</body>
+</html>
+{% endblock %}

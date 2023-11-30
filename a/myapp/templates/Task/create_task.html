@@ -1,0 +1,23 @@
+ {% extends 'Layaouts/../Layaouts/Base.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>
+    Crear Nueva Tarea
+</h1>
+<form method="post">
+
+    {% csrf_token %}
+    {{ form.as_p }}
+
+<button>Save</button>
+    </form>
+{{ alerta }}
+</body>
+</html>
+{% endblock %}
